@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,7 +48,6 @@
 				F2D910D11D299FAC60D622F1 /* Pods-SnapchatClone.debug.xcconfig */,
 				A2FC42AD97F6F1345721B7A3 /* Pods-SnapchatClone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
