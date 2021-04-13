@@ -84,14 +84,82 @@
             </objects>
             <point key="canvasLocation" x="1071.2" y="21.139430284857571"/>
         </scene>
-        <!--View Controller-->
+        <!--Criar conta-->
         <scene sceneID="nfd-oo-nLv">
             <objects>
-                <viewController id="C5h-9z-HPK" sceneMemberID="viewController">
+                <viewController title="Criar conta" id="C5h-9z-HPK" customClass="CadastroViewController" customModule="SnapchatClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wZi-PW-Iw2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itG-p6-aAr">
+                                <rect key="frame" x="16" y="72" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JpG-Iy-HLJ">
+                                <rect key="frame" x="16" y="101" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbX-Aq-QiW">
+                                <rect key="frame" x="16" y="147" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9eb-KR-3YW">
+                                <rect key="frame" x="16" y="176" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CmJ-SJ-jb8">
+                                <rect key="frame" x="16" y="243" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCQ-am-FDI">
+                                <rect key="frame" x="127.5" y="289" width="120" height="40"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="US9-AC-3Na"/>
+                                    <constraint firstAttribute="width" constant="120" id="wfh-Gb-XGj"/>
+                                </constraints>
+                                <state key="normal" title="Criar conta">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmar senha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgO-n7-eqB">
+                                <rect key="frame" x="16" y="214" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="itG-p6-aAr" firstAttribute="top" secondItem="0wv-Tm-gSY" secondAttribute="top" constant="8" id="3Uf-gW-ZeH"/>
+                            <constraint firstItem="BCQ-am-FDI" firstAttribute="centerX" secondItem="wZi-PW-Iw2" secondAttribute="centerX" id="3tu-ht-KyD"/>
+                            <constraint firstItem="0wv-Tm-gSY" firstAttribute="trailing" secondItem="CmJ-SJ-jb8" secondAttribute="trailing" constant="16" id="CQm-G9-RNh"/>
+                            <constraint firstItem="0wv-Tm-gSY" firstAttribute="trailing" secondItem="9eb-KR-3YW" secondAttribute="trailing" constant="16" id="Ceb-hv-VqU"/>
+                            <constraint firstItem="BCQ-am-FDI" firstAttribute="top" secondItem="CmJ-SJ-jb8" secondAttribute="bottom" constant="16" id="DyI-mg-Bxy"/>
+                            <constraint firstItem="0wv-Tm-gSY" firstAttribute="trailing" secondItem="JpG-Iy-HLJ" secondAttribute="trailing" constant="16" id="GSO-ER-lcu"/>
+                            <constraint firstItem="fgO-n7-eqB" firstAttribute="leading" secondItem="0wv-Tm-gSY" secondAttribute="leading" constant="16" id="GtD-E1-MSk"/>
+                            <constraint firstItem="JpG-Iy-HLJ" firstAttribute="top" secondItem="itG-p6-aAr" secondAttribute="bottom" constant="8" id="JRS-SC-XQO"/>
+                            <constraint firstItem="itG-p6-aAr" firstAttribute="leading" secondItem="0wv-Tm-gSY" secondAttribute="leading" constant="16" id="JZs-5s-hQF"/>
+                            <constraint firstItem="9eb-KR-3YW" firstAttribute="top" secondItem="AbX-Aq-QiW" secondAttribute="bottom" constant="8" id="Lcl-Ss-yLX"/>
+                            <constraint firstItem="AbX-Aq-QiW" firstAttribute="top" secondItem="JpG-Iy-HLJ" secondAttribute="bottom" constant="16" id="Lry-GB-iHf"/>
+                            <constraint firstItem="CmJ-SJ-jb8" firstAttribute="top" secondItem="fgO-n7-eqB" secondAttribute="bottom" constant="8" id="QKE-hP-FFl"/>
+                            <constraint firstItem="fgO-n7-eqB" firstAttribute="top" secondItem="9eb-KR-3YW" secondAttribute="bottom" constant="8" id="RJI-rP-hTo"/>
+                            <constraint firstItem="AbX-Aq-QiW" firstAttribute="leading" secondItem="0wv-Tm-gSY" secondAttribute="leading" constant="16" id="eEb-Iw-urJ"/>
+                            <constraint firstItem="CmJ-SJ-jb8" firstAttribute="leading" secondItem="0wv-Tm-gSY" secondAttribute="leading" constant="16" id="lQN-Pj-xlm"/>
+                            <constraint firstItem="JpG-Iy-HLJ" firstAttribute="leading" secondItem="0wv-Tm-gSY" secondAttribute="leading" constant="16" id="vsj-lp-dZP"/>
+                            <constraint firstItem="9eb-KR-3YW" firstAttribute="leading" secondItem="0wv-Tm-gSY" secondAttribute="leading" constant="16" id="zuu-FA-PpE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0wv-Tm-gSY"/>
                     </view>
                 </viewController>
@@ -99,14 +167,65 @@
             </objects>
             <point key="canvasLocation" x="2004" y="369.26536731634184"/>
         </scene>
-        <!--View Controller-->
+        <!--Entrar-->
         <scene sceneID="maA-yV-g5o">
             <objects>
-                <viewController id="sMl-3g-1Dp" sceneMemberID="viewController">
+                <viewController title="Entrar" id="sMl-3g-1Dp" customClass="EntrarViewController" customModule="SnapchatClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GA5-6w-Ecg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFg-EK-j7k">
+                                <rect key="frame" x="16" y="72" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MhI-CN-0K1">
+                                <rect key="frame" x="16" y="101" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lv0-8R-cT4">
+                                <rect key="frame" x="16" y="147" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bU-2X-1vU">
+                                <rect key="frame" x="127.5" y="222" width="120" height="40"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4r8-gK-VY4"/>
+                                    <constraint firstAttribute="width" constant="120" id="YC3-Kp-Wyi"/>
+                                </constraints>
+                                <state key="normal" title="Entrar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c2B-f6-CRL">
+                                <rect key="frame" x="16" y="176" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZE8-SE-BiF" firstAttribute="trailing" secondItem="c2B-f6-CRL" secondAttribute="trailing" constant="16" id="800-vj-m5N"/>
+                            <constraint firstItem="ZE8-SE-BiF" firstAttribute="trailing" secondItem="MhI-CN-0K1" secondAttribute="trailing" constant="16" id="KTO-ha-wuS"/>
+                            <constraint firstItem="lv0-8R-cT4" firstAttribute="top" secondItem="MhI-CN-0K1" secondAttribute="bottom" constant="16" id="LRy-6Q-rRA"/>
+                            <constraint firstItem="MhI-CN-0K1" firstAttribute="top" secondItem="JFg-EK-j7k" secondAttribute="bottom" constant="8" id="PYH-ec-ANA"/>
+                            <constraint firstItem="JFg-EK-j7k" firstAttribute="top" secondItem="ZE8-SE-BiF" secondAttribute="top" constant="8" id="TFI-67-AHU"/>
+                            <constraint firstItem="2bU-2X-1vU" firstAttribute="top" secondItem="c2B-f6-CRL" secondAttribute="bottom" constant="16" id="cki-ws-5CH"/>
+                            <constraint firstItem="2bU-2X-1vU" firstAttribute="centerX" secondItem="GA5-6w-Ecg" secondAttribute="centerX" id="g4f-ih-rhp"/>
+                            <constraint firstItem="c2B-f6-CRL" firstAttribute="top" secondItem="lv0-8R-cT4" secondAttribute="bottom" constant="8" id="j3c-oc-rHp"/>
+                            <constraint firstItem="MhI-CN-0K1" firstAttribute="leading" secondItem="ZE8-SE-BiF" secondAttribute="leading" constant="16" id="jYW-Us-BZA"/>
+                            <constraint firstItem="c2B-f6-CRL" firstAttribute="leading" secondItem="ZE8-SE-BiF" secondAttribute="leading" constant="16" id="uZ2-ie-OfJ"/>
+                            <constraint firstItem="lv0-8R-cT4" firstAttribute="leading" secondItem="ZE8-SE-BiF" secondAttribute="leading" constant="16" id="vwt-yM-Ief"/>
+                            <constraint firstItem="JFg-EK-j7k" firstAttribute="leading" secondItem="ZE8-SE-BiF" secondAttribute="leading" constant="16" id="yV9-5r-Lva"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZE8-SE-BiF"/>
                     </view>
                 </viewController>
