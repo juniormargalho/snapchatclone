@@ -32,9 +32,29 @@ class CadastroViewController: UIViewController {
                             if erro == nil {
                                 print("sucesso ao cadastrar usuario")
                             }else {
-                                print("Erro ao cadastrar usuario")
-                            }
-                            
+                                
+                                let erroR = erro! as NSError
+                                
+                                if let codigoErro = erroR.userInfo["FIRAuthErrorUserInfoNameKey"] {
+                                    let erroTexto = codigoErro as! String
+                                    var mensagemErro = ""
+                                    
+                                    switch erroTexto {
+                                        case "ERROR_INVALID_EMAIL" :
+                                            mensagemErro = "E-mail inválido, digite um e-mail válido!"
+                                            break
+                                        case "ERROR_WEAK_PASSWORD" :
+                                            mensagemErro = "Senha precisa ter no mínimo 6 caracteres, com letras e números!"
+                                            break
+                                        case "ERROR_EMAIL_ALREADY_IN_USE" :
+                                            mensagemErro = "Este e-mail já está cadastrado!"
+                                            break
+                                        default :
+                                            mensagemErro = "Dados digitados estão incorretos!"
+                                    }
+                                    self.exibirMensagem(titulo: "Dados inválidos!", mensagem: mensagemErro)
+                                }
+                            }//fim validacao erro
                         }
                         
                     }else {
