@@ -18,11 +18,11 @@ class ViewController: UIViewController {
         let autenticacao = Auth.auth()
         
         //desloga o usuario
-//        do {
-//            try autenticacao.signOut()
-//        } catch {
-//            print("erro ao deslogar")
-//        }
+        do {
+            try autenticacao.signOut()
+        } catch {
+            print("erro ao deslogar")
+        }
         
         autenticacao.addStateDidChangeListener { (autenticacao, usuario) in
             
