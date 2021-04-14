@@ -7,12 +7,31 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //verifica se o usuario ja está logado
+        let autenticacao = Auth.auth()
+        
+        //desloga o usuario
+//        do {
+//            try autenticacao.signOut()
+//        } catch {
+//            print("erro ao deslogar")
+//        }
+        
+        autenticacao.addStateDidChangeListener { (autenticacao, usuario) in
+            
+            if let usuarioLogado = usuario {
+                self.performSegue(withIdentifier: "loginAutomaticoSegue", sender: nil)
+            }
+            
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

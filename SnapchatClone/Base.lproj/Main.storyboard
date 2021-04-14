@@ -79,6 +79,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Snapchat" id="ZHw-Yc-yQ8"/>
+                    <connections>
+                        <segue destination="DGS-Zx-OPS" kind="presentation" identifier="loginAutomaticoSegue" id="xyG-I9-bFe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,11 +172,36 @@
                         <outlet property="confirmarSenhaText" destination="CmJ-SJ-jb8" id="xhk-jb-cP8"/>
                         <outlet property="emailText" destination="JpG-Iy-HLJ" id="KmB-7p-fmx"/>
                         <outlet property="senhaText" destination="9eb-KR-3YW" id="Nj9-Dg-BvT"/>
+                        <segue destination="DGS-Zx-OPS" kind="presentation" identifier="cadastroLoginSegue" id="Qhq-LI-QF4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6E-bY-qhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2007" y="385"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IVN-fQ-ddd">
+            <objects>
+                <viewController id="DGS-Zx-OPS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qvM-HE-fuj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MAIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omu-85-hZV">
+                                <rect key="frame" x="158" y="319" width="59" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="azQ-WJ-ECV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7dY-CU-9TK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2943" y="21"/>
         </scene>
         <!--Entrar-->
         <scene sceneID="maA-yV-g5o">
@@ -189,7 +217,7 @@
                                 <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MhI-CN-0K1">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="teste@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MhI-CN-0K1">
                                 <rect key="frame" x="16" y="101" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -211,8 +239,11 @@
                                 <state key="normal" title="Entrar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="entrar:" destination="sMl-3g-1Dp" eventType="touchUpInside" id="wWm-Am-fWr"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c2B-f6-CRL">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c2B-f6-CRL">
                                 <rect key="frame" x="16" y="176" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -236,6 +267,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZE8-SE-BiF"/>
                     </view>
+                    <connections>
+                        <outlet property="emailText" destination="MhI-CN-0K1" id="zxb-rs-0ZK"/>
+                        <outlet property="senhaText" destination="c2B-f6-CRL" id="85c-9V-qwZ"/>
+                        <segue destination="DGS-Zx-OPS" kind="presentation" identifier="loginSegue" id="64g-S0-nZW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIh-Gj-edt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -264,4 +300,7 @@
     <resources>
         <image name="logo" width="200" height="200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="xyG-I9-bFe"/>
+    </inferredMetricsTieBreakers>
 </document>
