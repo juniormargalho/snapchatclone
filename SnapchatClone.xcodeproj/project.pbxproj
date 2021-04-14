@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		633E21D32626182C004CF974 /* EntrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633E21D22626182C004CF974 /* EntrarViewController.swift */; };
 		633E21D526261855004CF974 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633E21D426261855004CF974 /* CadastroViewController.swift */; };
+		639033F82627732E0036F096 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639033F72627732E0036F096 /* SnapsViewController.swift */; };
+		639033FA2627737F0036F096 /* FotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639033F92627737F0036F096 /* FotoViewController.swift */; };
 		63CF8F2F2620C12500C61390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CF8F2E2620C12500C61390 /* AppDelegate.swift */; };
 		63CF8F312620C12500C61390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CF8F302620C12500C61390 /* ViewController.swift */; };
 		63CF8F342620C12500C61390 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CF8F322620C12500C61390 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 		36DB334C750304779FA5F90A /* Pods_SnapchatClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapchatClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		633E21D22626182C004CF974 /* EntrarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrarViewController.swift; sourceTree = "<group>"; };
 		633E21D426261855004CF974 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		639033F72627732E0036F096 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
+		639033F92627737F0036F096 /* FotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoViewController.swift; sourceTree = "<group>"; };
 		63CF8F2B2620C12500C61390 /* SnapchatClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CF8F2E2620C12500C61390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63CF8F302620C12500C61390 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				63CF8F302620C12500C61390 /* ViewController.swift */,
 				633E21D22626182C004CF974 /* EntrarViewController.swift */,
 				633E21D426261855004CF974 /* CadastroViewController.swift */,
+				639033F72627732E0036F096 /* SnapsViewController.swift */,
+				639033F92627737F0036F096 /* FotoViewController.swift */,
 				63CF8F322620C12500C61390 /* Main.storyboard */,
 				63CF8F352620C12600C61390 /* Assets.xcassets */,
 				63CF8F372620C12600C61390 /* LaunchScreen.storyboard */,
@@ -213,9 +219,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639033F82627732E0036F096 /* SnapsViewController.swift in Sources */,
 				63CF8F312620C12500C61390 /* ViewController.swift in Sources */,
 				63CF8F2F2620C12500C61390 /* AppDelegate.swift in Sources */,
 				633E21D32626182C004CF974 /* EntrarViewController.swift in Sources */,
+				639033FA2627737F0036F096 /* FotoViewController.swift in Sources */,
 				633E21D526261855004CF974 /* CadastroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

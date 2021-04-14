@@ -182,7 +182,7 @@
         <!--Snaps-->
         <scene sceneID="IVN-fQ-ddd">
             <objects>
-                <viewController id="DGS-Zx-OPS" sceneMemberID="viewController">
+                <viewController id="DGS-Zx-OPS" customClass="SnapsViewController" customModule="SnapchatClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qvM-HE-fuj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,7 +190,11 @@
                         <viewLayoutGuide key="safeArea" id="azQ-WJ-ECV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Snaps" id="Y52-oQ-Bqp">
-                        <barButtonItem key="leftBarButtonItem" title="Sair" id="Gjk-Bj-NzA"/>
+                        <barButtonItem key="leftBarButtonItem" title="Sair" id="Gjk-Bj-NzA">
+                            <connections>
+                                <action selector="sair:" destination="DGS-Zx-OPS" id="Sh8-V7-2yq"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="RvP-rJ-vaa">
                             <connections>
                                 <segue destination="D5M-u2-xTw" kind="show" id="BiV-uz-zkq"/>
@@ -202,10 +206,10 @@
             </objects>
             <point key="canvasLocation" x="3836" y="20"/>
         </scene>
-        <!--View Controller-->
+        <!--Foto View Controller-->
         <scene sceneID="Z2g-pC-rHu">
             <objects>
-                <viewController id="D5M-u2-xTw" sceneMemberID="viewController">
+                <viewController id="D5M-u2-xTw" customClass="FotoViewController" customModule="SnapchatClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zQ6-Im-TKI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
