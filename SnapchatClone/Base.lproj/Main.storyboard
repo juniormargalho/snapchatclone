@@ -233,6 +233,7 @@
                                 </state>
                                 <connections>
                                     <action selector="entrar:" destination="sMl-3g-1Dp" eventType="touchUpInside" id="KCO-9k-2ZU"/>
+                                    <action selector="proximoPasso:" destination="D5M-u2-xTw" eventType="touchUpInside" id="x5h-rK-xLl"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O1d-Sf-xKB">
@@ -262,6 +263,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="botaoProximo" destination="gTd-zY-DBt" id="KHq-bH-i2n"/>
                         <outlet property="descricao" destination="O1d-Sf-xKB" id="baN-sd-Kh8"/>
                         <outlet property="imagem" destination="1WZ-dp-yIH" id="4yJ-DH-41C"/>
                     </connections>
