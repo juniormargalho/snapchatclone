@@ -15,6 +15,7 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var botaoProximo: UIButton!
     
     var imagePicker = UIImagePickerController()
+    var idImagem = NSUUID().uuidString
     
     @IBAction func proximoPasso(_ sender: Any) {
         self.botaoProximo.isEnabled = false
@@ -25,11 +26,20 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         //recupera a imagem
         if let imagemSelecionada = imagem.image {
-            if let imagemDados = imagemSelecionada.jpegData(compressionQuality: 0.5){
-                imagens.child("imagem.jpg").putData(imagemDados, metadata: nil) { (metaDados, erro) in
+            if let imagemDados = imagemSelecionada.jpegData(compressionQuality: 0.1){
+                imagens.child("\(self.idImagem).jpg").putData(imagemDados, metadata: nil) { (metaDados, erro) in
                     
                     if erro == nil {
                         print("sucesso")
+                        
+                        imagens.child("\(self.idImagem).jpg").downloadURL(completion: { (url, erro) in
+                            if erro == nil {
+                                print(url?.absoluteString)
+                            }else {
+                                print("erro ao recuperar url")
+                            }
+                        })
+                        
                         self.botaoProximo.isEnabled = true
                         self.botaoProximo.setTitle("Próximo", for: .normal)
                     }else {
@@ -50,12 +60,18 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let imagemRecuperada = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         imagem.image = imagemRecuperada
         imagePicker.dismiss(animated: true, completion: nil)
+        self.botaoProximo.isEnabled = true
+        self.botaoProximo.backgroundColor = UIColor.blue
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
+        
+        botaoProximo.isEnabled = false
+        botaoProximo.backgroundColor = UIColor.gray
+        
     }
     
 }
