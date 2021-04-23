@@ -21,15 +21,12 @@ class ViewController: UIViewController {
             if let usuarioLogado = usuario {
                 self.performSegue(withIdentifier: "loginAutomaticoSegue", sender: nil)
             }
-            
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
-
+    
 }
 
