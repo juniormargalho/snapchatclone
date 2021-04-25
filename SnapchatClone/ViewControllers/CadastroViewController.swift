@@ -31,7 +31,8 @@ class CadastroViewController: UIViewController {
                             
                             if erro == nil {
                                 if usuario == nil {
-                                    self.exibirMensagem(titulo: "Erro ao autenticar", mensagem: "Problema ao realizar autenticação, tente novamente.")
+                                    let alerta = Alerta(titulo: "Erro ao autenticar", mensagem: "Problema ao realizar autenticação, tente novamente.")
+                                    self.present(alerta.getAlerta(), animated: true, completion: nil)
                                 }else {
                                     
                                     //redireciona o usuario para a tela principal
@@ -59,26 +60,21 @@ class CadastroViewController: UIViewController {
                                         default :
                                             mensagemErro = "Dados digitados estão incorretos!"
                                     }
-                                    self.exibirMensagem(titulo: "Dados inválidos!", mensagem: mensagemErro)
+                                    let alerta = Alerta(titulo: "Dados inválidos", mensagem: mensagemErro)
+                                    self.present(alerta.getAlerta(), animated: true, completion: nil)
                                 }
                             }//fim validacao erro
                         }
                         
                     }else {
-                        self.exibirMensagem(titulo: "Dados incorretos", mensagem: "As senhas não estão iguais, digite novamente!")
+                        let alerta = Alerta(titulo: "Dados incorretos", mensagem: "As senhas não estão iguais, digite novamente!")
+                        self.present(alerta.getAlerta(), animated: true, completion: nil)
                     }//fim validar senha
                     
                 }
             }
         }
         
-    }
-    
-    func exibirMensagem(titulo: String, mensagem: String) {
-        let alerta = UIAlertController(title: titulo, message: mensagem, preferredStyle: .alert)
-        let acaoCancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
-        alerta.addAction(acaoCancelar)
-        present(alerta, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

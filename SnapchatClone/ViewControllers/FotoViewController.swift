@@ -30,9 +30,10 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 imagens.child("\(self.idImagem).jpg").putData(imagemDados, metadata: nil) { (metaDados, erro) in
                     
                     if erro == nil {
-                        print("sucesso")
+                        let alerta = Alerta(titulo: "Sucesso", mensagem: "Sucesso ao salvar imagem")
+                        self.present(alerta.getAlerta(), animated: true, completion: nil)
                         
-                        imagens.child("\(self.idImagem).jpg").downloadURL(completion: { (url, erro) in
+                        imagens.child((metaDados?.name)!).downloadURL(completion: { (url, erro) in
                             if erro == nil {
                                 print(url?.absoluteString)
                             }else {
@@ -43,7 +44,8 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                         self.botaoProximo.isEnabled = true
                         self.botaoProximo.setTitle("Próximo", for: .normal)
                     }else {
-                        print("falha")
+                        let alerta = Alerta(titulo: "Falha de envio", mensagem: "Erro ao salvar arquivo, tente novamente!")
+                        self.present(alerta.getAlerta(), animated: true, completion: nil)
                     }
                     
                 }

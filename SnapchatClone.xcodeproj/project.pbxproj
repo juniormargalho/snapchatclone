@@ -11,6 +11,7 @@
 		633E21D526261855004CF974 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633E21D426261855004CF974 /* CadastroViewController.swift */; };
 		639033F82627732E0036F096 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639033F72627732E0036F096 /* SnapsViewController.swift */; };
 		639033FA2627737F0036F096 /* FotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639033F92627737F0036F096 /* FotoViewController.swift */; };
+		63A8C55F2635FE2600099B9F /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8C55E2635FE2600099B9F /* Alerta.swift */; };
 		63CF8F2F2620C12500C61390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CF8F2E2620C12500C61390 /* AppDelegate.swift */; };
 		63CF8F312620C12500C61390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CF8F302620C12500C61390 /* ViewController.swift */; };
 		63CF8F342620C12500C61390 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CF8F322620C12500C61390 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		633E21D426261855004CF974 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		639033F72627732E0036F096 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		639033F92627737F0036F096 /* FotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoViewController.swift; sourceTree = "<group>"; };
+		63A8C55E2635FE2600099B9F /* Alerta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerta.swift; sourceTree = "<group>"; };
 		63CF8F2B2620C12500C61390 /* SnapchatClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CF8F2E2620C12500C61390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63CF8F302620C12500C61390 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		63A8C55C2635FD5D00099B9F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				63CF8F302620C12500C61390 /* ViewController.swift */,
+				633E21D22626182C004CF974 /* EntrarViewController.swift */,
+				633E21D426261855004CF974 /* CadastroViewController.swift */,
+				639033F72627732E0036F096 /* SnapsViewController.swift */,
+				639033F92627737F0036F096 /* FotoViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		63A8C55D2635FDA600099B9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63A8C55E2635FE2600099B9F /* Alerta.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		63CF8F222620C12400C61390 = {
 			isa = PBXGroup;
 			children = (
@@ -80,12 +102,9 @@
 		63CF8F2D2620C12500C61390 /* SnapchatClone */ = {
 			isa = PBXGroup;
 			children = (
+				63A8C55D2635FDA600099B9F /* Models */,
+				63A8C55C2635FD5D00099B9F /* ViewControllers */,
 				63CF8F2E2620C12500C61390 /* AppDelegate.swift */,
-				63CF8F302620C12500C61390 /* ViewController.swift */,
-				633E21D22626182C004CF974 /* EntrarViewController.swift */,
-				633E21D426261855004CF974 /* CadastroViewController.swift */,
-				639033F72627732E0036F096 /* SnapsViewController.swift */,
-				639033F92627737F0036F096 /* FotoViewController.swift */,
 				63CF8F322620C12500C61390 /* Main.storyboard */,
 				63CF8F352620C12600C61390 /* Assets.xcassets */,
 				63CF8F372620C12600C61390 /* LaunchScreen.storyboard */,
@@ -225,6 +244,7 @@
 				633E21D32626182C004CF974 /* EntrarViewController.swift in Sources */,
 				639033FA2627737F0036F096 /* FotoViewController.swift in Sources */,
 				633E21D526261855004CF974 /* CadastroViewController.swift in Sources */,
+				63A8C55F2635FE2600099B9F /* Alerta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

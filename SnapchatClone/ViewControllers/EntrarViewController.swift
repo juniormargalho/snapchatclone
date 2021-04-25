@@ -26,14 +26,16 @@ class EntrarViewController: UIViewController {
                     
                     if erro == nil {
                         if usuario == nil {
-                            self.exibirMensagem(titulo: "Erro ao autenticar", mensagem: "Problema ao realizar autenticação, tente novamente.")
+                            let alerta = Alerta(titulo: "Erro ao autenticar", mensagem: "Problema ao realizar autenticação, tente novamente!")
+                            self.present(alerta.getAlerta(), animated: true, completion: nil)
                         }else {
                             
                             //redireciona o usuario para a tela principal
                             self.performSegue(withIdentifier: "loginSegue", sender: nil)
                         }
                     }else {
-                        self.exibirMensagem(titulo: "Dados incorretos!", mensagem: "Verifique os dados digitados e tente novamente.")
+                        let alerta = Alerta(titulo: "Dados incorretos", mensagem: "Verifique os dados digitados e tente novamente!")
+                        self.present(alerta.getAlerta(), animated: true, completion: nil)
                     }
                 }
             }
@@ -47,13 +49,6 @@ class EntrarViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-    
-    func exibirMensagem(titulo: String, mensagem: String) {
-        let alerta = UIAlertController(title: titulo, message: mensagem, preferredStyle: .alert)
-        let acaoCancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
-        alerta.addAction(acaoCancelar)
-        present(alerta, animated: true, completion: nil)
     }
 
 }
