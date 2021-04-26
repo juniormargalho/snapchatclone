@@ -8,10 +8,12 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class CadastroViewController: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var nomeCompleto: UITextField!
     @IBOutlet weak var senhaText: UITextField!
     @IBOutlet weak var confirmarSenhaText: UITextField!
     
@@ -19,62 +21,75 @@ class CadastroViewController: UIViewController {
         
         //recuperar dados digitados
         if let emailR = self.emailText.text {
-            if let senhaR = self.senhaText.text {
-                if let confirmarSenhaR = self.confirmarSenhaText.text {
-                    
-                    //validar senha
-                    if senhaR == confirmarSenhaR {
+            if let nomeCompletoR = self.nomeCompleto.text {
+                if let senhaR = self.senhaText.text {
+                    if let confirmarSenhaR = self.confirmarSenhaText.text {
                         
-                        //criar conta firebase
-                        let autenticacao = Auth.auth()
-                        autenticacao.createUser(withEmail: emailR, password: senhaR) { (usuario, erro) in
+                        //validar senha
+                        if senhaR == confirmarSenhaR {
                             
-                            if erro == nil {
-                                if usuario == nil {
-                                    let alerta = Alerta(titulo: "Erro ao autenticar", mensagem: "Problema ao realizar autenticação, tente novamente.")
-                                    self.present(alerta.getAlerta(), animated: true, completion: nil)
-                                }else {
-                                    
-                                    //redireciona o usuario para a tela principal
-                                    self.performSegue(withIdentifier: "cadastroLoginSegue", sender: nil)
-                                }
+                            //validar nome
+                            if nomeCompletoR != "" {
                                 
+                                //criar conta firebase
+                                let autenticacao = Auth.auth()
+                                autenticacao.createUser(withEmail: emailR, password: senhaR) { (usuario, erro) in
+                                    
+                                    if erro == nil {
+                                        if usuario == nil {
+                                            let alerta = Alerta(titulo: "Erro ao autenticar", mensagem: "Problema ao realizar autenticação, tente novamente.")
+                                            self.present(alerta.getAlerta(), animated: true, completion: nil)
+                                        }else {
+                                            
+                                            //salva usuario no database
+                                            let database = Database.database().reference()
+                                            let usuarios = database.child("usuarios")
+                                            let usuarioDados = ["nome": nomeCompletoR, "email": emailR]
+                                            usuarios.child(usuario!.user.uid).setValue(usuarioDados)
+                                            
+                                            //redireciona o usuario para a tela principal
+                                            self.performSegue(withIdentifier: "cadastroLoginSegue", sender: nil)
+                                        }
+                                        
+                                    }else {
+                                        
+                                        let erroR = erro! as NSError
+                                        
+                                        if let codigoErro = erroR.userInfo["FIRAuthErrorUserInfoNameKey"] {
+                                            let erroTexto = codigoErro as! String
+                                            var mensagemErro = ""
+                                            
+                                            switch erroTexto {
+                                            case "ERROR_INVALID_EMAIL" :
+                                                mensagemErro = "E-mail inválido, digite um e-mail válido!"
+                                                break
+                                            case "ERROR_WEAK_PASSWORD" :
+                                                mensagemErro = "Senha precisa ter no mínimo 6 caracteres, com letras e números!"
+                                                break
+                                            case "ERROR_EMAIL_ALREADY_IN_USE" :
+                                                mensagemErro = "Este e-mail já está cadastrado!"
+                                                break
+                                            default :
+                                                mensagemErro = "Dados digitados estão incorretos!"
+                                            }
+                                            let alerta = Alerta(titulo: "Dados inválidos", mensagem: mensagemErro)
+                                            self.present(alerta.getAlerta(), animated: true, completion: nil)
+                                        }
+                                    }//fim validacao erro
+                                }
                             }else {
-                                
-                                let erroR = erro! as NSError
-                                
-                                if let codigoErro = erroR.userInfo["FIRAuthErrorUserInfoNameKey"] {
-                                    let erroTexto = codigoErro as! String
-                                    var mensagemErro = ""
-                                    
-                                    switch erroTexto {
-                                        case "ERROR_INVALID_EMAIL" :
-                                            mensagemErro = "E-mail inválido, digite um e-mail válido!"
-                                            break
-                                        case "ERROR_WEAK_PASSWORD" :
-                                            mensagemErro = "Senha precisa ter no mínimo 6 caracteres, com letras e números!"
-                                            break
-                                        case "ERROR_EMAIL_ALREADY_IN_USE" :
-                                            mensagemErro = "Este e-mail já está cadastrado!"
-                                            break
-                                        default :
-                                            mensagemErro = "Dados digitados estão incorretos!"
-                                    }
-                                    let alerta = Alerta(titulo: "Dados inválidos", mensagem: mensagemErro)
-                                    self.present(alerta.getAlerta(), animated: true, completion: nil)
-                                }
-                            }//fim validacao erro
-                        }
+                                let alerta = Alerta(titulo: "Dados imcompletos", mensagem: "Digite seu nome, por favor!")
+                                self.present(alerta.getAlerta(), animated: true, completion: nil)
+                            }
+                        }else {
+                            let alerta = Alerta(titulo: "Dados incorretos", mensagem: "As senhas não estão iguais, digite novamente!")
+                            self.present(alerta.getAlerta(), animated: true, completion: nil)
+                        }//fim validar senha
                         
-                    }else {
-                        let alerta = Alerta(titulo: "Dados incorretos", mensagem: "As senhas não estão iguais, digite novamente!")
-                        self.present(alerta.getAlerta(), animated: true, completion: nil)
-                    }//fim validar senha
-                    
+                    }
                 }
             }
         }
-        
     }
     
     override func viewDidLoad() {
