@@ -30,12 +30,11 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 imagens.child("\(self.idImagem).jpg").putData(imagemDados, metadata: nil) { (metaDados, erro) in
                     
                     if erro == nil {
-                        let alerta = Alerta(titulo: "Sucesso", mensagem: "Sucesso ao salvar imagem")
-                        self.present(alerta.getAlerta(), animated: true, completion: nil)
+                        print("sucesso ao salvar imagem")
                         
                         imagens.child((metaDados?.name)!).downloadURL(completion: { (url, erro) in
                             if erro == nil {
-                                print(url?.absoluteString)
+                                self.performSegue(withIdentifier: "selecionarUsuarioSegue", sender: url?.absoluteString)
                             }else {
                                 print("erro ao recuperar url")
                             }

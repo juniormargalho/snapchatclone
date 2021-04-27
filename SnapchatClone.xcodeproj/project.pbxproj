@@ -18,6 +18,8 @@
 		63CF8F362620C12600C61390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CF8F352620C12600C61390 /* Assets.xcassets */; };
 		63CF8F392620C12600C61390 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CF8F372620C12600C61390 /* LaunchScreen.storyboard */; };
 		63CF8F412620C29E00C61390 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CF8F402620C29E00C61390 /* GoogleService-Info.plist */; };
+		63DBA510263882A00069036F /* UsuariosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBA50F263882A00069036F /* UsuariosTableViewController.swift */; };
+		63DBA512263886FE0069036F /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBA511263886FE0069036F /* Usuario.swift */; };
 		BC8FD5EBE02EBE0193D1255B /* Pods_SnapchatClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DB334C750304779FA5F90A /* Pods_SnapchatClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		63CF8F382620C12600C61390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63CF8F3A2620C12600C61390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63CF8F402620C29E00C61390 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		63DBA50F263882A00069036F /* UsuariosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuariosTableViewController.swift; sourceTree = "<group>"; };
+		63DBA511263886FE0069036F /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		A2FC42AD97F6F1345721B7A3 /* Pods-SnapchatClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapchatClone.release.xcconfig"; path = "Target Support Files/Pods-SnapchatClone/Pods-SnapchatClone.release.xcconfig"; sourceTree = "<group>"; };
 		F2D910D11D299FAC60D622F1 /* Pods-SnapchatClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapchatClone.debug.xcconfig"; path = "Target Support Files/Pods-SnapchatClone/Pods-SnapchatClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +73,7 @@
 				633E21D426261855004CF974 /* CadastroViewController.swift */,
 				639033F72627732E0036F096 /* SnapsViewController.swift */,
 				639033F92627737F0036F096 /* FotoViewController.swift */,
+				63DBA50F263882A00069036F /* UsuariosTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -77,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				63A8C55E2635FE2600099B9F /* Alerta.swift */,
+				63DBA511263886FE0069036F /* Usuario.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,8 +246,10 @@
 			files = (
 				639033F82627732E0036F096 /* SnapsViewController.swift in Sources */,
 				63CF8F312620C12500C61390 /* ViewController.swift in Sources */,
+				63DBA510263882A00069036F /* UsuariosTableViewController.swift in Sources */,
 				63CF8F2F2620C12500C61390 /* AppDelegate.swift in Sources */,
 				633E21D32626182C004CF974 /* EntrarViewController.swift in Sources */,
+				63DBA512263886FE0069036F /* Usuario.swift in Sources */,
 				639033FA2627737F0036F096 /* FotoViewController.swift in Sources */,
 				633E21D526261855004CF974 /* CadastroViewController.swift in Sources */,
 				63A8C55F2635FE2600099B9F /* Alerta.swift in Sources */,
