@@ -8,9 +8,13 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class UsuariosTableViewController: UITableViewController {
     var usuarios: [Usuario] = []
+    var urlImagem = ""
+    var descricao = ""
+    var idImagem = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,10 +62,23 @@ class UsuariosTableViewController: UITableViewController {
         let database = Database.database().reference()
         let usuarios = database.child("usuarios")
         let snaps = usuarios.child(idUsuarioSelecionado).child("snaps")
-        let snap = ["email": "teste@gmail.com", "nome": "teste", "descricao": "desc", "urlImagem": "fasdfasd", "idImagem": "34563456"]
         
-        snaps.childByAutoId().setValue(snap)
-        
+        //Recuperar dados do usuario logado
+        let autenticacao = Auth.auth()
+        if let idUsuarioLogado = autenticacao.currentUser?.uid {
+            let usuarioLogado = usuarios.child(idUsuarioLogado)
+            usuarioLogado.observeSingleEvent(of: DataEventType.value) { (snapshot) in
+                
+                let dados = snapshot.value as? NSDictionary
+                let snap = ["email": dados?["email"] as! String,
+                            "nome": dados?["nome"] as! String,
+                            "descricao": self.descricao,
+                            "urlImagem": self.urlImagem,
+                            "idImagem": self.idImagem]
+                snaps.childByAutoId().setValue(snap)
+                
+            }
+        }
     }
 
     /*

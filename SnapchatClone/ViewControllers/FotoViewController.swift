@@ -46,10 +46,22 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                         let alerta = Alerta(titulo: "Falha de envio", mensagem: "Erro ao salvar arquivo, tente novamente!")
                         self.present(alerta.getAlerta(), animated: true, completion: nil)
                     }
-                    
                 }
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "selecionarUsuarioSegue" {
+            
+            let usuarioViewController = segue.destination as! UsuariosTableViewController
+            usuarioViewController.descricao = self.descricao.text!
+            usuarioViewController.urlImagem = sender as! String
+            usuarioViewController.idImagem = self.idImagem
+            
+        }
+        
     }
     
     @IBAction func selecionarFoto(_ sender: Any) {
