@@ -10,7 +10,10 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class SnapsViewController: UIViewController {
+class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var snaps: [Snap] = []
     
     @IBAction func sair(_ sender: Any) {
@@ -48,13 +51,34 @@ class SnapsViewController: UIViewController {
                 snap.idImagem = dados?["idImagem"] as! String
                 
                 self.snaps.append(snap)
-                
-                print(self.snaps)
+                self.tableView.reloadData()
                 
             }
             
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let totalSnaps = snaps.count
+        if totalSnaps == 0 {
+            return 1
+        }
+        return totalSnaps
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let totalSnaps = snaps.count
+        
+        if totalSnaps == 0 {
+            cell.textLabel?.text = "Nenhum snap para você!"
+        }else {
+            let snap = self.snaps[indexPath.row]
+            cell.textLabel?.text = snap.nome
+        }
+        
+        return cell
     }
     
 }

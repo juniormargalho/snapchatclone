@@ -204,7 +204,33 @@
                     <view key="view" contentMode="scaleToFill" id="qvM-HE-fuj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mTy-aW-tnq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="b3Q-l0-UNh">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b3Q-l0-UNh" id="zZH-sf-GSH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DGS-Zx-OPS" id="L9q-hX-oae"/>
+                                    <outlet property="delegate" destination="DGS-Zx-OPS" id="yFA-T5-sMm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mTy-aW-tnq" firstAttribute="leading" secondItem="azQ-WJ-ECV" secondAttribute="leading" id="Fjj-N3-rGR"/>
+                            <constraint firstItem="mTy-aW-tnq" firstAttribute="trailing" secondItem="azQ-WJ-ECV" secondAttribute="trailing" id="jsP-8g-hvK"/>
+                            <constraint firstItem="mTy-aW-tnq" firstAttribute="top" secondItem="azQ-WJ-ECV" secondAttribute="top" id="nc6-NK-7T1"/>
+                            <constraint firstItem="mTy-aW-tnq" firstAttribute="bottom" secondItem="azQ-WJ-ECV" secondAttribute="bottom" id="wtv-iP-iQn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="azQ-WJ-ECV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Snaps" id="Y52-oQ-Bqp">
@@ -219,10 +245,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="mTy-aW-tnq" id="fVb-Hp-Lfg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dY-CU-9TK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3836" y="20"/>
+            <point key="canvasLocation" x="3836" y="19.340329835082461"/>
         </scene>
         <!--Foto-->
         <scene sceneID="Z2g-pC-rHu">
