@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		633D17AA263F2F9800DAE15B /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D17A9263F2F9800DAE15B /* Snap.swift */; };
 		633E21D32626182C004CF974 /* EntrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633E21D22626182C004CF974 /* EntrarViewController.swift */; };
 		633E21D526261855004CF974 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633E21D426261855004CF974 /* CadastroViewController.swift */; };
 		639033F82627732E0036F096 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639033F72627732E0036F096 /* SnapsViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		36DB334C750304779FA5F90A /* Pods_SnapchatClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapchatClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		633D17A9263F2F9800DAE15B /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		633E21D22626182C004CF974 /* EntrarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrarViewController.swift; sourceTree = "<group>"; };
 		633E21D426261855004CF974 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		639033F72627732E0036F096 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				63A8C55E2635FE2600099B9F /* Alerta.swift */,
 				63DBA511263886FE0069036F /* Usuario.swift */,
+				633D17A9263F2F9800DAE15B /* Snap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				639033F82627732E0036F096 /* SnapsViewController.swift in Sources */,
+				633D17AA263F2F9800DAE15B /* Snap.swift in Sources */,
 				63CF8F312620C12500C61390 /* ViewController.swift in Sources */,
 				63DBA510263882A00069036F /* UsuariosTableViewController.swift in Sources */,
 				63CF8F2F2620C12500C61390 /* AppDelegate.swift in Sources */,
