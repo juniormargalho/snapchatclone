@@ -247,6 +247,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="mTy-aW-tnq" id="fVb-Hp-Lfg"/>
+                        <segue destination="HBn-Es-Tbs" kind="presentation" identifier="detalhesSnapSegue" id="QUe-7D-Eg6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dY-CU-9TK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -364,6 +365,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhc-IO-5lX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5639" y="20"/>
+        </scene>
+        <!--Detalhes Snap View Controller-->
+        <scene sceneID="raO-iZ-qyw">
+            <objects>
+                <viewController id="HBn-Es-Tbs" customClass="DetalhesSnapViewController" customModule="SnapchatClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CGB-gb-jPS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cbd-6L-fBj">
+                                <rect key="frame" x="16" y="20" width="343" height="246"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="246" id="GJS-Cz-8zo"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUZ-Od-kDw">
+                                <rect key="frame" x="16" y="274" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9b8-25-elo">
+                                <rect key="frame" x="16" y="527.5" width="343" height="119.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="736-DC-p2Q" firstAttribute="trailing" secondItem="sUZ-Od-kDw" secondAttribute="trailing" constant="16" id="6cL-nj-JaK"/>
+                            <constraint firstItem="736-DC-p2Q" firstAttribute="bottom" secondItem="9b8-25-elo" secondAttribute="bottom" constant="20" id="EfN-L6-vPe"/>
+                            <constraint firstItem="sUZ-Od-kDw" firstAttribute="top" secondItem="cbd-6L-fBj" secondAttribute="bottom" constant="8" id="M82-Z4-FDK"/>
+                            <constraint firstItem="cbd-6L-fBj" firstAttribute="top" secondItem="736-DC-p2Q" secondAttribute="top" id="Pcz-re-KhG"/>
+                            <constraint firstItem="736-DC-p2Q" firstAttribute="trailing" secondItem="9b8-25-elo" secondAttribute="trailing" constant="16" id="U2R-rj-31Q"/>
+                            <constraint firstItem="sUZ-Od-kDw" firstAttribute="top" secondItem="cbd-6L-fBj" secondAttribute="bottom" constant="8" id="bY8-6V-fzt"/>
+                            <constraint firstItem="9b8-25-elo" firstAttribute="leading" secondItem="736-DC-p2Q" secondAttribute="leading" constant="16" id="df4-wK-acn"/>
+                            <constraint firstItem="cbd-6L-fBj" firstAttribute="leading" secondItem="736-DC-p2Q" secondAttribute="leading" constant="16" id="nF1-Zd-D2f"/>
+                            <constraint firstItem="736-DC-p2Q" firstAttribute="trailing" secondItem="cbd-6L-fBj" secondAttribute="trailing" constant="16" id="sqU-IZ-OWL"/>
+                            <constraint firstItem="sUZ-Od-kDw" firstAttribute="leading" secondItem="736-DC-p2Q" secondAttribute="leading" constant="16" id="z4C-ja-lX3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="736-DC-p2Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="contador" destination="9b8-25-elo" id="hrO-U2-hfN"/>
+                        <outlet property="detalhes" destination="sUZ-Od-kDw" id="Sq1-47-G5j"/>
+                        <outlet property="imagem" destination="cbd-6L-fBj" id="C3K-yH-NC7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTB-vZ-yIG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3836" y="787"/>
         </scene>
         <!--Entrar-->
         <scene sceneID="maA-yV-g5o">

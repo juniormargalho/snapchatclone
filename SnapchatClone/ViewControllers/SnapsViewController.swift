@@ -70,15 +70,28 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let totalSnaps = snaps.count
-        
         if totalSnaps == 0 {
             cell.textLabel?.text = "Nenhum snap para você!"
         }else {
             let snap = self.snaps[indexPath.row]
             cell.textLabel?.text = snap.nome
         }
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let totalSnaps = snaps.count
+        if totalSnaps > 0 {
+            let snap = self.snaps[indexPath.row]
+            self.performSegue(withIdentifier: "detalhesSnapSegue", sender: snap)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detalhesSnapSegue" {
+            let detalhesSnapViewController = segue.destination as! DetalhesSnapViewController
+            detalhesSnapViewController.snap = sender as! Snap
+        }
     }
     
 }

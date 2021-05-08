@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63161CDF26471137002D3A8C /* DetalhesSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63161CDE26471137002D3A8C /* DetalhesSnapViewController.swift */; };
 		633D17AA263F2F9800DAE15B /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D17A9263F2F9800DAE15B /* Snap.swift */; };
 		633E21D32626182C004CF974 /* EntrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633E21D22626182C004CF974 /* EntrarViewController.swift */; };
 		633E21D526261855004CF974 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633E21D426261855004CF974 /* CadastroViewController.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		36DB334C750304779FA5F90A /* Pods_SnapchatClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapchatClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63161CDE26471137002D3A8C /* DetalhesSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesSnapViewController.swift; sourceTree = "<group>"; };
 		633D17A9263F2F9800DAE15B /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		633E21D22626182C004CF974 /* EntrarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrarViewController.swift; sourceTree = "<group>"; };
 		633E21D426261855004CF974 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				639033F72627732E0036F096 /* SnapsViewController.swift */,
 				639033F92627737F0036F096 /* FotoViewController.swift */,
 				63DBA50F263882A00069036F /* UsuariosTableViewController.swift */,
+				63161CDE26471137002D3A8C /* DetalhesSnapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63161CDF26471137002D3A8C /* DetalhesSnapViewController.swift in Sources */,
 				639033F82627732E0036F096 /* SnapsViewController.swift in Sources */,
 				633D17AA263F2F9800DAE15B /* Snap.swift in Sources */,
 				63CF8F312620C12500C61390 /* ViewController.swift in Sources */,
