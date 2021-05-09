@@ -77,6 +77,10 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.botaoProximo.backgroundColor = UIColor.blue
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
